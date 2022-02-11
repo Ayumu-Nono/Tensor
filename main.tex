@@ -32,7 +32,7 @@
 \end{align}
 
 \section{Differential}
-
+\subsection{First order}
 \begin{align}
     &\grad \va*{a} = \nabla_i a_j \\
     &\div \va*{a} = \nabla_i a_i = \tr{\pqty{ \nabla_i a_j }}
@@ -45,6 +45,116 @@
     &\pqty{\div \va*{u}} \va*{u} + \pqty{\va*{u} \vdot \grad} \va*{u} = u_j \nabla_i u_i + u_i \nabla_i u_j\\
 \end{align}
 
+% second order %%%%%%%%%%%%%%%%%%%%%
+\subsection{Second order}
+\begin{align}
+    \grad \pqty{\va*{a} \vdot \va*{b}}
+    &= \nabla_i \pqty{a_j b_j}
+    \\
+    &= \nabla_i \pqty{a_1 b_1 + a_2 b_2 + a_3 b_3}
+    \\
+    &= \mqty[
+        \nabla_1 \pqty{a_1 b_1 + a_2 b_2 + a_3 b_3} \\
+        \nabla_2 \pqty{a_1 b_1 + a_2 b_2 + a_3 b_3} \\
+        \nabla_3 \pqty{a_1 b_1 + a_2 b_2 + a_3 b_3}
+    ]
+    \\
+    &= \mqty[
+        a_1 \nabla_1 b_1 + a_2 \nabla_1 b_2 + a_3 \nabla_1 b_3  \\
+        a_1 \nabla_2 b_1 + a_2 \nabla_2 b_2 + a_3 \nabla_2 b_3  \\
+        a_1 \nabla_3 b_1 + a_2 \nabla_3 b_2 + a_3 \nabla_3 b_3  \\
+    ] 
+    \\
+    & + \mqty[
+        b_1 \nabla_1 a_1 + b_2 \nabla_1 a_2 + b_3 \nabla_1 a_3  \\
+        b_1 \nabla_2 a_1 + b_2 \nabla_2 a_2 + b_3 \nabla_2 a_3  \\
+        b_1 \nabla_3 a_1 + b_2 \nabla_3 a_2 + b_3 \nabla_3 a_3  \\
+    ]
+\end{align}
+
+\begin{align}
+    \div \pqty{\va*{a} \va*{b}}
+    &= \nabla_j \pqty{a_j b_i}
+    \\
+    &= \mqty[
+    \nabla_1 \pqty{a_1 b_1} + \nabla_2 \pqty{a_2 b_1} + \nabla_3 \pqty{a_3 b_1}  \\
+    \nabla_1 \pqty{a_1 b_2} + \nabla_2 \pqty{a_2 b_2} + \nabla_3 \pqty{a_3 b_2}   \\
+    \nabla_1 \pqty{a_1 b_3} + \nabla_2 \pqty{a_2 b_3} + \nabla_3 \pqty{a_3 b_3}  
+    ]
+    \\
+    &= \mqty[
+        b_1 \nabla_1 a_1 + b_1 \nabla_2 a_2 + b_1 \nabla_3 a_3 \\
+        b_2 \nabla_2 a_1 + b_2 \nabla_2 a_2 + b_2 \nabla_3 a_3 \\
+        b_3 \nabla_3 a_1 + b_3 \nabla_2 a_2 + b_3 \nabla_3 a_3 \\
+    ] \\
+    &+ \mqty[
+        a_1 \nabla_1 b_1 + a_2 \nabla_2 b_2 + a_3 \nabla_3 b_1 \\
+        a_1 \nabla_1 b_2 + a_2 \nabla_2 b_2 + a_3 \nabla_3 b_2 \\
+        a_1 \nabla_1 b_3 + a_2 \nabla_2 b_3 + a_3 \nabla_3 b_3 \\
+    ]
+\end{align}
+\begin{align}
+    \pqty{ \div \va*{a}} \va*{b}
+    &= \pqty{\nabla_j a_j} b_i \\
+    &= \pqty{\nabla_1 a_1 + \nabla_2 a_2 + \nabla_3 a_3} b_i \\
+    &= \mqty[
+        b_1 \nabla_1 a_1 + b_1 \nabla_2 a_2 + b_1 \nabla_3 a_3 \\
+        b_2 \nabla_1 a_1 + b_2 \nabla_2 a_2 + b_2 \nabla_3 a_3 \\
+        b_3 \nabla_1 a_1 + b_3 \nabla_2 a_2 + b_3 \nabla_3 a_3 \\
+    ]
+\end{align}
+\begin{align}
+    \pqty{\va*{a} \vdot \grad} \va*{b}
+    &= \pqty{a_j \nabla_j} b_i \\
+    &= \pqty{a_1 \nabla_1 + a_2 \nabla_2 + a_3 \nabla_3} b_i \\
+    &= \mqty[
+        a_1 \nabla_1 b_1 + a_2 \nabla_2 b_1 + a_3 \nabla_3 b_1 \\
+        a_1 \nabla_1 b_2 + a_2 \nabla_2 b_2 + a_3 \nabla_3 b_2 \\
+        a_1 \nabla_1 b_3 + a_2 \nabla_2 b_3 + a_3 \nabla_3 b_3 \\
+    ]
+\end{align}
+
+\begin{align}
+    \div \pqty{\va*{a} \va*{a}}
+    &= \nabla_i \pqty{a_i a_j}
+    \\
+    &= \mqty[
+    \nabla_1 \pqty{a_1 a_1} + \nabla_2 \pqty{a_2 a_1} + \nabla_3 \pqty{a_3 a_1}  \\
+    \nabla_1 \pqty{a_1 a_2} + \nabla_2 \pqty{a_2 a_2} + \nabla_3 \pqty{a_3 a_2}   \\
+    \nabla_1 \pqty{a_1 a_3} + \nabla_2 \pqty{a_2 a_3} + \nabla_3 \pqty{a_3 a_3}  
+    ]
+    \\
+    &= \mqty[
+        a_1 \nabla_1 a_1 + a_1 \nabla_2 a_2 + a_1 \nabla_3 a_3 \\
+        a_2 \nabla_1 a_1 + a_2 \nabla_2 a_2 + a_2 \nabla_3 a_3 \\
+        a_3 \nabla_1 a_1 + a_3 \nabla_2 a_2 + a_3 \nabla_3 a_3 \\
+    ] \\
+    &+ \mqty[
+        a_1 \nabla_1 a_1 + a_2 \nabla_2 a_1 + a_3 \nabla_3 a_1 \\
+        a_1 \nabla_1 a_2 + a_2 \nabla_2 a_2 + a_3 \nabla_3 a_2 \\
+        a_1 \nabla_1 a_3 + a_2 \nabla_2 a_3 + a_3 \nabla_3 a_3 \\
+    ]
+\end{align}
+\begin{align}
+    \pqty{ \div \va*{a}} \va*{a}
+    &= \pqty{\nabla_j a_j} a_i \\
+    &= \pqty{\nabla_1 a_1 + \nabla_2 a_2 + \nabla_3 a_3} a_i \\
+    &= \mqty[
+        a_1 \nabla_1 a_1 + a_1 \nabla_2 a_2 + a_1 \nabla_3 a_3 \\
+        a_2 \nabla_1 a_1 + a_2 \nabla_2 a_2 + a_2 \nabla_3 a_3 \\
+        a_3 \nabla_1 a_1 + a_3 \nabla_2 a_2 + a_3 \nabla_3 a_3 \\
+    ]
+\end{align}
+\begin{align}
+    \pqty{\va*{a} \vdot \grad} \va*{a}
+    &= \pqty{a_j \nabla_j} a_i \\
+    &= \pqty{a_1 \nabla_1 + a_2 \nabla_2 + a_3 \nabla_3} a_i \\
+    &= \mqty[
+        a_1 \nabla_1 a_1 + a_2 \nabla_2 a_1 + a_3 \nabla_3 a_1 \\
+        a_1 \nabla_1 a_2 + a_2 \nabla_2 a_2 + a_3 \nabla_3 a_2 \\
+        a_1 \nabla_1 a_3 + a_2 \nabla_2 a_3 + a_3 \nabla_3 a_3 \\
+    ]
+\end{align}
 
 
 
