@@ -1,0 +1,51 @@
+\documentclass[dvipdfmx,autodetect-engine]{article}
+\usepackage[margin=20mm]{geometry}
+\usepackage{tikz}
+\usepackage{physics}
+\usepackage{amsmath,amssymb}
+\usepackage[thicklines]{cancel}
+\renewcommand{\CancelColor}{\color{red}}
+\usepackage{color}
+
+% new command
+\newcommand{\cnum}[1]{\color{red}{\raise0.2ex\hbox{\textcircled{\scriptsize{#1}}}}\color{black}}
+\newcommand{\itemline}[2]{\mathop{\underline{\color{black}{#1}}}\limits_{\cnum{#2}}}
+\newcommand{\indep}{\mathop{\perp\!\!\!\!\perp}}
+
+\title{Tensor}
+\author{Ayumu Nono}
+
+\begin{document}
+\maketitle
+
+
+\section{Basics}
+
+\begin{align}
+    &a_1 b_1 + a_2 b_2 + a_3 b_3 = a_1 b_i \\
+    &T_{i j} = a_i b_j = \smqty(\xmat*{T}{3}{3}) 
+\end{align}
+
+
+\begin{align}
+    &\va*{a} \vdot \va*{b} =  a_i b_i  = \tr \pqty{a_i b_j} \\
+\end{align}
+
+\section{Differential}
+
+\begin{align}
+    &\grad \va*{a} = \nabla_i a_j \\
+    &\div \va*{a} = \nabla_i a_i = \tr{\pqty{ \nabla_i a_j }}
+\end{align}
+
+\begin{align}
+    &\div \pqty{n \va*{u}} = \nabla_i \pqty{n u_i} \\
+    &\va*{u} \vdot \grad n + n \div \va*{u} = u_i \nabla_i n + n \nabla_i u_i \\
+    &\div \pqty{\va*{u} \otimes \va*{u}} = \nabla_i \pqty{u_i u_j} \\
+    &\pqty{\div \va*{u}} \va*{u} + \pqty{\va*{u} \vdot \grad} \va*{u} = u_j \nabla_i u_i + u_i \nabla_i u_j\\
+\end{align}
+
+
+
+
+\end{document}
